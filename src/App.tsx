@@ -10,13 +10,7 @@ function App() {
   const [btnClicked, setBtnClicked] = useState<boolean>(false);
 
   function btnClickedHandler() {
-    if (btnClicked === true) {
-      setBtnClicked(false);
-      console.log("false");
-    } else {
-      setBtnClicked(true);
-      console.log("true");
-    }
+    setBtnClicked((val) => (val = !val));
   }
 
   return (
@@ -29,18 +23,25 @@ function App() {
             Ever been in a room and felt like something was missing? Perhabs it felt slightly bare and uninviting. I've
             got some simple tips to help you make any room feel complete.
           </p>
-          <div className="posted-by">
-            <img className="profile" src={profile} alt="" />
-            {/* <div className="author">
-              <h2>Michelle Appleton</h2>
-              <span>28 Jun 2020</span>
-            </div> */}
-            <div className="share-menu">
-              <h2>SHARE</h2>
-              <img src={facebook} alt="" />
-              <img src={pinterest} alt="" />
-              <img src={twitter} alt="" />
-            </div>
+          <div className="posted-by active">
+            {btnClicked && (
+              <>
+                <img className="profile" src={profile} alt="" />
+                <div className="author">
+                  <h2>Michelle Appleton</h2>
+                  <span>28 Jun 2020</span>
+                </div>
+              </>
+            )}
+
+            {!btnClicked && (
+              <div className="share-menu">
+                <h2>SHARE</h2>
+                <img src={facebook} alt="" />
+                <img src={pinterest} alt="" />
+                <img src={twitter} alt="" />
+              </div>
+            )}
             <div onClick={btnClickedHandler} className="shared">
               <img src={share} alt="" />
             </div>

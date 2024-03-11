@@ -50,25 +50,24 @@ img {
   /* border: orange 1px solid; */
   padding-inline: 2rem;
 }
-
+.posted-by {
+}
 .posted-by .profile {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
-.posted-by .shared {
+.shared {
   background-color: hsl(210, 46%, 95%);
-  width: 4em;
+  height: 30px;
   border-radius: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 1;
 }
 
 .shared {
-  display: flex;
-  align-items: start;
-  aspect-ratio: 1;
 }
 .shared img {
   width: 20px;
@@ -96,17 +95,23 @@ span {
   font-size: 0.8rem;
 }
 .posted-by {
+  min-height: 3rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
   width: 100%;
   display: flex;
   align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
+}
+.share-menu {
 }
 .author {
   padding-left: 1.5rem;
 
   border-radius: 50%;
-  width: 100%;
+  /* width: 100%; */
+  flex: 1;
 }
 .author h2 {
   font-size: 14px;
@@ -121,14 +126,27 @@ span {
 }
 
 .share-menu {
-  margin-inline: 1.5rem;
+  /* margin-inline: 1.5rem; */
   width: 10rem;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.share-menu h2 {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .share-menu img {
   background-color: gray;
-  width: 50px;
+  width: 30px;
+  height: 30px;
   object-fit: cover;
+}
+
+.active {
+}
+
+.active > img {
 }
