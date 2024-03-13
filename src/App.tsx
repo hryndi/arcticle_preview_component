@@ -23,7 +23,7 @@ function App() {
             Ever been in a room and felt like something was missing? Perhabs it felt slightly bare and uninviting. I've
             got some simple tips to help you make any room feel complete.
           </p>
-          <div className="posted-by active">
+          <div className={!btnClicked ? "posted-by active" : "posted-by"}>
             {btnClicked && (
               <>
                 <img className="profile" src={profile} alt="" />
